@@ -22,4 +22,4 @@ async function getById(id) {
   return localidad
 }
 
-module.exports = { getAll, getAllByIdProvincia }
+module.exports = { getById, getAllByIdProvincia }

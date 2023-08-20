@@ -1,8 +1,8 @@
 const localidadService = require('../services/localidad-service')
 
-async function getAll(req, res) {
-
-  const localidades = await localidadService.getAll()
+async function getAllByProvincia(req, res) {
+  const { id } = req.params;
+  const localidades = await localidadService.getAllByIdProvincia(id)
 
   res.status(200).send(localidades)
 }
@@ -19,4 +19,4 @@ async function getById(req, res, next) {
   }
 }
 
-module.exports = { getAll, getById}
+module.exports = { getAllByProvincia, getById}
