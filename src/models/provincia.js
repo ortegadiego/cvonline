@@ -31,4 +31,4 @@ Provincia.init({
 Provincia.hasMany(Localidad, { foreignKey: 'loc_pvcId'})
 Localidad.belongsTo(Provincia, { foreignKey: 'loc_pvcId'})
 
-module.exports = { Localidad }
+module.exports = { Provincia }
