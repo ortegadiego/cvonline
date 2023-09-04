@@ -2,6 +2,7 @@ const express = require('express')
 const provinciaRoutes = require('./src/routes/provincia-routes')
 const localidadRoutes = require('./src/routes/localidad-routes')
 const idiomaRoutes = require('./src/routes/idiomas_routes')
+const direccionesRoutes = require('./src/routes/direcciones_routes')
 const { errorHandlerMiddleware } = require('./src/middlewares/error-handler')
 const { initializeAuthentication } = require('./src/auth/auth')
 const dotenv = require('dotenv');
@@ -17,6 +18,7 @@ app.use(express.json())
 app.use('/provincia', provinciaRoutes)
 app.use('/localidad', localidadRoutes)
 app.use('/idiomas', idiomaRoutes)
+app.use('/direcciones', direccionesRoutes)
 app.use(errorHandlerMiddleware)
 
 app.listen(port, () => {
