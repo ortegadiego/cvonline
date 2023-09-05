@@ -1,0 +1,12 @@
+CREATE TABLE `direcciones` (
+  `direccion_id` int NOT NULL AUTO_INCREMENT,
+  `calle` varchar(100) DEFAULT NULL,
+  `numero` varchar(50) DEFAULT NULL,
+  `prvId` int NOT NULL,
+  `locId` int NOT NULL,
+  PRIMARY KEY (`direccion_id`),
+  KEY `locId` (`locId`),
+  KEY `direcciones_ibfk_1` (`prvId`),
+  CONSTRAINT `direcciones_ibfk_1` FOREIGN KEY (`prvId`) REFERENCES `provincias` (`pvcId`),
+  CONSTRAINT `direcciones_ibfk_2` FOREIGN KEY (`locId`) REFERENCES `localidades` (`locId`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
