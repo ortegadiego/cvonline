@@ -4,6 +4,7 @@ const localidadRoutes = require('./src/routes/localidad-routes')
 const idiomaRoutes = require('./src/routes/idiomas_routes')
 const rubroRoutes = require('./src/routes/rubro-routes')
 const curriculumRoutes = require('./src/routes/curriculum-routes')
+const direccionesRoutes = require('./src/routes/direcciones_routes')
 const { errorHandlerMiddleware } = require('./src/middlewares/error-handler')
 const { initializeAuthentication } = require('./src/auth/auth')
 const dotenv = require('dotenv');
@@ -21,6 +22,7 @@ app.use('/localidad', localidadRoutes)
 app.use('/idiomas', idiomaRoutes)
 app.use('/rubro', rubroRoutes)
 app.use('/curriculum', curriculumRoutes)
+app.use('/direcciones', direccionesRoutes)
 app.use(errorHandlerMiddleware)
 
 app.listen(port, () => {
